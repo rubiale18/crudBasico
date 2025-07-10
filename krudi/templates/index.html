@@ -11,7 +11,7 @@
             <li>
                 {{ u.nome }} ({{ u.email }})
                 [<a href="/editar/{{ u.id }}">Editar</a>]
-                <!-- Exemplo de botão de excluir em index.html -->
+                <!-- botão excluir -->
                 <form action="{{ url_for('excluir', id=u.id) }}" method="post" style="display:inline;">
                     <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
                 </form>
