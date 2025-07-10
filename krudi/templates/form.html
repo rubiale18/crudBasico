@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if usuario %}Editar{% else %}Novo{% endif %} Usuário</title>
+</head>
+<body>
+    <h1>{% if usuario %}Editar{% else %}Novo{% endif %} Usuário</h1>
+    <form method="POST">
+        Nome: <input type="text" name="nome" value="{{ usuario.nome if usuario else '' }}"><br>
+        Email: <input type="email" name="email" value="{{ usuario.email if usuario else '' }}"><br>
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="/">Voltar</a>
+</body>
+</html>

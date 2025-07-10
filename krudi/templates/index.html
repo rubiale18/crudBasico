@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Usuários</title>
+</head>
+<body>
+    <h1>Usuários</h1>
+    <a href="/novo">Novo Usuário</a>
+    <ul>
+        {% for u in usuarios %}
+            <li>
+                {{ u.nome }} ({{ u.email }})
+                [<a href="/editar/{{ u.id }}">Editar</a>]
+                <!-- Exemplo de botão de excluir em index.html -->
+                <form action="{{ url_for('excluir', id=u.id) }}" method="post" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
